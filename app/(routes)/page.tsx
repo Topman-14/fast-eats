@@ -13,8 +13,10 @@ const HomePage = async () => {
   return (
     <Container>
       <div className="space-y-10 pb-10">
-        <Billboard data={{
-          label: 'Meat Pieeeeeeeeaiiaiieee',
+        <Billboard 
+        isMainPage={true}
+          data={{
+          label: 'Order food, Anytime anywhere',
           id: 'abdc1234',
           imageUrl: '/billboard.jpg'
         }}/>

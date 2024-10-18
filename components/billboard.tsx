@@ -3,9 +3,10 @@ import { Billboard as BillboardTypes } from '@/types'
 
 interface BillboardProps {
     data: BillboardTypes;
+    isMainPage?: boolean;
 }
 
-const Billboard: React.FC<BillboardProps> = ({ data }) => {
+const Billboard: React.FC<BillboardProps> = ({ data, isMainPage }) => {
   return (
     <div className='p-4 sm:p-6 lg:p-8 rounded-xl overflow-hidden'>
         <div 
@@ -16,8 +17,8 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
              }}
             >
                 <div className="size-full flex flex-col justify-center items-center text-center gap-y-8">
-                    <div className='font-bold text-3xl sm:text-5xl lg:text-6xl sm:max-w-xl max-w-xs text-white text-shadow-lg shadow-[#0000007f]'>
-                        {data?.label}
+                    <div className='font-bold text-3xl sm:text-5xl lg:text-6xl text-white text-shadow-lg shadow-[#0000007f]'>
+                        {isMainPage? <span>Order food, <br />Anytime anywhere</span> : data?.label}
                     </div>
                 </div>
         
